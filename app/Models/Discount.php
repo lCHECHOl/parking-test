@@ -15,7 +15,7 @@ class Discount extends Model
      * @var array
      */
     protected $fillable = [
-        'discount_name',
+        'name_discount',
         'discount',
         'minutes',
     ];
@@ -27,7 +27,7 @@ class Discount extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'discount_name' => 'string',
+        'name_discount' => 'string',
         'discount' => 'integer',
         'minutes' => 'integer',
     ];
