@@ -11,6 +11,7 @@ class Vehicle extends Model
 
     protected $primaryKey = 'serial_or_plate';
     protected $keyType = 'string';
+    public $incrementing = false;
 
     /**
      * The attributes that are mass assignable.
@@ -21,7 +22,6 @@ class Vehicle extends Model
         'serial_or_plate',
         'brand',
         'model',
-        'user_id',
     ];
 
     /**
@@ -30,7 +30,7 @@ class Vehicle extends Model
      * @var array
      */
     protected $casts = [
-        'user_id' => 'integer',
+        'user_id' => 'string',
     ];
 
 

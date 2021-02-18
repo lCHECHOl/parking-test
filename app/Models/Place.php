@@ -15,8 +15,8 @@ class Place extends Model
      * @var array
      */
     protected $fillable = [
-        'id_vehicle',
-        'id_vehicle_type',
+        'vehicle_id',
+        'vehicle_type_id',
         'is_free',
     ];
 
@@ -27,7 +27,7 @@ class Place extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'vehicle_id' => 'integer',
+        'vehicle_id' => 'string',
         'vehicle_type_id' => 'integer',
         'parking_id' => 'integer',
         'is_free' => 'boolean',
