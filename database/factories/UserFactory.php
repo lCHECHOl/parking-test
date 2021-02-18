@@ -25,7 +25,7 @@ class UserFactory extends Factory
         return [
             'document' => $this->faker->numberBetween(1000000000,2000000000),
             'name' => $this->faker->name,
-            'email' => $this->faker->unique()->safeEmail,
+            'email' => null,
             'email_verified_at' => now(),
             'password' => 'password',
             'remember_token' => Str::random(10),
