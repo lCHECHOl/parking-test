@@ -2,14 +2,18 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
+
+    protected $primaryKey = 'document';
+    protected $keyType = 'string';
 
     /**
      * The attributes that are mass assignable.
@@ -17,9 +21,10 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
+        'document',
         'name',
         'email',
-        'password',
+        'password'
     ];
 
     /**
@@ -38,6 +43,23 @@ class User extends Authenticatable
      * @var array
      */
     protected $casts = [
+        'document' => 'string',
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Función que encrypta las contraseñas cuando se guarda un usuario
+     *
+     * @param string $password
+     * @return string
+     */
+    public function setPasswordAttribute($password)
+    {
+        $this->attributes['password'] = Hash::make($password);
+    }
+
+    public function vehicles()
+    {
+        return $this->hasMany(Vehicle::class, 'user_id', 'document');
+    }
 }
