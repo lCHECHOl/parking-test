@@ -137,6 +137,22 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Register",
   data: function data() {
@@ -144,6 +160,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       show: false,
       show_confirm: false,
       form: {
+        document: "",
         name: "",
         email: "",
         password: "",
@@ -344,6 +361,57 @@ var render = function() {
                                           [
                                             _c("ValidationProvider", {
                                               attrs: {
+                                                vid: "document",
+                                                name: "DOCUMENTO",
+                                                rules: "required|max:10"
+                                              },
+                                              scopedSlots: _vm._u(
+                                                [
+                                                  {
+                                                    key: "default",
+                                                    fn: function(ref) {
+                                                      var errors = ref.errors
+                                                      var valid = ref.valid
+                                                      return [
+                                                        _c("v-text-field", {
+                                                          attrs: {
+                                                            outlined: "",
+                                                            rounded: "",
+                                                            dense: "",
+                                                            label: "DOCUMENTO",
+                                                            "error-messages": errors,
+                                                            success: valid,
+                                                            disabled:
+                                                              _vm.$store.state
+                                                                .loading
+                                                          },
+                                                          model: {
+                                                            value:
+                                                              _vm.form.document,
+                                                            callback: function(
+                                                              $$v
+                                                            ) {
+                                                              _vm.$set(
+                                                                _vm.form,
+                                                                "document",
+                                                                $$v
+                                                              )
+                                                            },
+                                                            expression:
+                                                              "form.document"
+                                                          }
+                                                        })
+                                                      ]
+                                                    }
+                                                  }
+                                                ],
+                                                null,
+                                                true
+                                              )
+                                            }),
+                                            _vm._v(" "),
+                                            _c("ValidationProvider", {
+                                              attrs: {
                                                 vid: "name",
                                                 name: "NOMBRE COMPLETO",
                                                 rules: "required"
@@ -397,8 +465,7 @@ var render = function() {
                                             _c("ValidationProvider", {
                                               attrs: {
                                                 vid: "email",
-                                                name: "CORREO ELECTRONICO",
-                                                rules: "required|email"
+                                                name: "CORREO ELECTRONICO"
                                               },
                                               scopedSlots: _vm._u(
                                                 [

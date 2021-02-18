@@ -20,6 +20,23 @@
                                 <v-list-item-content>
                                     <v-form>
                                         <ValidationProvider
+                                            vid="document"
+                                            name="DOCUMENTO"
+                                            rules="required|max:10"
+                                            v-slot="{ errors, valid }"
+                                        >
+                                            <v-text-field
+                                                outlined
+                                                rounded
+                                                dense
+                                                label="DOCUMENTO"
+                                                v-model="form.document"
+                                                :error-messages="errors"
+                                                :success="valid"
+                                                :disabled="$store.state.loading"
+                                            ></v-text-field>
+                                        </ValidationProvider>
+                                        <ValidationProvider
                                             vid="name"
                                             name="NOMBRE COMPLETO"
                                             rules="required"
@@ -39,7 +56,6 @@
                                         <ValidationProvider
                                             vid="email"
                                             name="CORREO ELECTRONICO"
-                                            rules="required|email"
                                             v-slot="{ errors, valid }"
                                         >
                                             <v-text-field
@@ -125,6 +141,7 @@ export default {
         show: false,
         show_confirm: false,
         form: {
+            document: "",
             name: "",
             email: "",
             password: "",

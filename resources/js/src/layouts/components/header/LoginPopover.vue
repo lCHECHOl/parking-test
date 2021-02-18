@@ -16,17 +16,17 @@
                         <v-list-item-content>
                             <v-form>
                                 <ValidationProvider
-                                    vid="email"
-                                    name="CORREO ELECTRONICO"
-                                    rules="required|email"
+                                    vid="document"
+                                    name="DOCUMENTO"
+                                    rules="required"
                                     v-slot="{ errors, valid }"
                                 >
                                     <v-text-field
                                         outlined
                                         rounded
                                         dense
-                                        label="CORREO ELECTRONICO"
-                                        v-model="form.email"
+                                        label="DOCUMENTO"
+                                        v-model="form.document"
                                         :error-messages="errors"
                                         :success="valid"
                                         :disabled="$store.state.loading"
@@ -101,7 +101,7 @@ export default {
     data: () => ({
         show: false,
         form: {
-            email: "",
+            document: "",
             password: "",
             remember: false,
         },

@@ -80,7 +80,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   data: function data() {
     return {
       formForgotPassword: {
-        email: ""
+        document: ""
       }
     };
   },
@@ -245,7 +245,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     return {
       show: false,
       form: {
-        email: "",
+        document: "",
         password: "",
         remember: false
       }
@@ -380,9 +380,9 @@ var render = function() {
                                   [
                                     _c("ValidationProvider", {
                                       attrs: {
-                                        vid: "email",
-                                        name: "CORREO ELECTRONICO",
-                                        rules: "required|email"
+                                        vid: "document",
+                                        name: "DOCUMENTO",
+                                        rules: "required"
                                       },
                                       scopedSlots: _vm._u(
                                         [
@@ -397,7 +397,7 @@ var render = function() {
                                                     outlined: "",
                                                     rounded: "",
                                                     dense: "",
-                                                    label: "CORREO ELECTRONICO",
+                                                    label: "DOCUMENTO",
                                                     "error-messages": errors,
                                                     success: valid,
                                                     loading:
@@ -410,16 +410,16 @@ var render = function() {
                                                   model: {
                                                     value:
                                                       _vm.formForgotPassword
-                                                        .email,
+                                                        .document,
                                                     callback: function($$v) {
                                                       _vm.$set(
                                                         _vm.formForgotPassword,
-                                                        "email",
+                                                        "document",
                                                         $$v
                                                       )
                                                     },
                                                     expression:
-                                                      "formForgotPassword.email"
+                                                      "formForgotPassword.document"
                                                   }
                                                 })
                                               ]
@@ -584,9 +584,9 @@ var render = function() {
                                   [
                                     _c("ValidationProvider", {
                                       attrs: {
-                                        vid: "email",
-                                        name: "CORREO ELECTRONICO",
-                                        rules: "required|email"
+                                        vid: "document",
+                                        name: "DOCUMENTO",
+                                        rules: "required"
                                       },
                                       scopedSlots: _vm._u(
                                         [
@@ -601,22 +601,22 @@ var render = function() {
                                                     outlined: "",
                                                     rounded: "",
                                                     dense: "",
-                                                    label: "CORREO ELECTRONICO",
+                                                    label: "DOCUMENTO",
                                                     "error-messages": errors,
                                                     success: valid,
                                                     disabled:
                                                       _vm.$store.state.loading
                                                   },
                                                   model: {
-                                                    value: _vm.form.email,
+                                                    value: _vm.form.document,
                                                     callback: function($$v) {
                                                       _vm.$set(
                                                         _vm.form,
-                                                        "email",
+                                                        "document",
                                                         $$v
                                                       )
                                                     },
-                                                    expression: "form.email"
+                                                    expression: "form.document"
                                                   }
                                                 })
                                               ]

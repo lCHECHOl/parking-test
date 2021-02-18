@@ -13,17 +13,17 @@
                         <v-list-item-content>
                             <v-form>
                                 <ValidationProvider
-                                    vid="email"
-                                    name="CORREO ELECTRONICO"
-                                    rules="required|email"
+                                    vid="document"
+                                    name="DOCUMENTO"
+                                    rules="required"
                                     v-slot="{ errors, valid }"
                                 >
                                     <v-text-field
                                         outlined
                                         rounded
                                         dense
-                                        label="CORREO ELECTRONICO"
-                                        v-model="formForgotPassword.email"
+                                        label="DOCUMENTO"
+                                        v-model="formForgotPassword.document"
                                         :error-messages="errors"
                                         :success="valid"
                                         :loading="$store.state.auth.modalLoading"
@@ -61,7 +61,7 @@ export default {
     name: "ModalForgotPassword",
     data: () => ({
         formForgotPassword: {
-            email: "",
+            document: "",
         },
     }),
     methods: {
