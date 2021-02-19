@@ -24,3 +24,12 @@ Route::post('forgot-password', 'Auth\ForgotPasswordController@sendResetLinkEmail
 Route::post('reset-password', 'Auth\ResetPasswordController@reset');
 Route::post('register', 'Auth\RegisterController@register');
 
+Route::group(['prefix' => 'v1'], function(){
+    Route::group([
+        'as' => 'api.',
+        'namespace' => 'Api',
+        // 'middleware' => 'auth:sanctum'
+    ], function(){
+        Route::apiResource('vehicles', 'VehicleController');
+    });
+});

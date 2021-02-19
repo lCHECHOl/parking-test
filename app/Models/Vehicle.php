@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Transformers\VehicleTransformer;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Vehicle extends Model
 {
@@ -12,6 +13,7 @@ class Vehicle extends Model
     protected $primaryKey = 'serial_or_plate';
     protected $keyType = 'string';
     public $incrementing = false;
+    public $transformer = VehicleTransformer::class;
 
     /**
      * The attributes that are mass assignable.
