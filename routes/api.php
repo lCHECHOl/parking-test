@@ -30,6 +30,7 @@ Route::group(['prefix' => 'v1'], function(){
         'namespace' => 'Api',
         // 'middleware' => 'auth:sanctum'
     ], function(){
+        Route::apiResource('users', 'UserController');
         Route::apiResource('vehicles', 'VehicleController');
     });
 });

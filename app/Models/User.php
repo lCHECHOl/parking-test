@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Support\Facades\Hash;
+use App\Transformers\UserTransformer;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -15,6 +16,7 @@ class User extends Authenticatable
     protected $primaryKey = 'document';
     protected $keyType = 'string';
     public $incrementing = false;
+    public $transformer = UserTransformer::class;
 
     /**
      * The attributes that are mass assignable.

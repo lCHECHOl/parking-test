@@ -78,6 +78,9 @@ class VehicleRepository implements VehiclesInterface
     public function destroy($vehicle)
     {
         if ($vehicle->delete()) {
+
+            $vehicle->user()->dissociate();
+
             return [
                 'code' => 200,
                 'message' => "vehiculo eliminado exitosamente",
